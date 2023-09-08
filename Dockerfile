@@ -1,6 +1,9 @@
 #stage1
 FROM registry.access.redhat.com/ubi8/openjdk-11:1.15-1.1679485219 as builder
-COPY . .
+
+COPY src src
+COPY pom.xml .
+
 RUN mvn clean package
 
 #stage2
